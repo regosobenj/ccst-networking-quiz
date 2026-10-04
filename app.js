@@ -569,6 +569,21 @@ async function sha256(message) {
 
   function renderMatching(q, res, isSubmitted) {
     let out = '<div class="matching-container">';
+    
+    // Create the draggable options pool
+    out += '<div class="matching-pool" id="matchingPool">';
+    q.options.forEach(opt => {
+      // Options always stay in the pool so they can be reused
+      out += `
+        <div class="draggable-option" draggable="${!isSubmitted}" data-opt="${escapeHtml(opt)}">
+          ${escapeHtml(opt)}
+        </div>
+      `;
+    });
+    out += '</div>';
+
+    // Create the target rows
+    out += '<div class="matching-rows">';
     q.pairs.forEach((pair, pIdx) => {
       const selectedVal = (res.answers && res.answers[pIdx]) ? res.answers[pIdx] : '';
       const isPairCorrect = isSubmitted && selectedVal === pair.answer;
@@ -580,14 +595,13 @@ async function sha256(message) {
             ${escapeHtml(pair.prompt)}
             ${isSubmitted ? `<div style="font-size:0.8rem; color:${isPairCorrect ? 'var(--accent-green)' : 'var(--accent-amber)'}; font-weight:700; margin-top:4px;">Target: ${escapeHtml(pair.answer)}</div>` : ''}
           </div>
-          <select class="matching-select" data-pair-idx="${pIdx}" ${isSubmitted ? 'disabled' : ''}>
-            <option value="">-- Choose Option --</option>
-            ${q.options.map(opt => `<option value="${escapeHtml(opt)}" ${selectedVal === opt ? 'selected' : ''}>${escapeHtml(opt)}</option>`).join('')}
-          </select>
+          <div class="matching-target" data-pair-idx="${pIdx}">
+            ${selectedVal ? `<div class="draggable-option" draggable="${!isSubmitted}" data-opt="${escapeHtml(selectedVal)}">${escapeHtml(selectedVal)}</div>` : '<span class="placeholder-text">Drop answer here</span>'}
+          </div>
         </div>
       `;
     });
-    out += '</div>';
+    out += '</div></div>';
     return out;
   }
 
@@ -726,14 +740,60 @@ async function sha256(message) {
           });
         });
       } else if (q.type === 'matching') {
-        document.querySelectorAll('.matching-select').forEach(sel => {
-          sel.addEventListener('change', (e) => {
-            const pIdx = parseInt(sel.getAttribute('data-pair-idx'));
-            if (!res.answers) res.answers = [];
-            res.answers[pIdx] = e.target.value;
-            userResponses[q.id] = res;
+        let draggedOpt = null;
+        
+        // Setup draggables
+        document.querySelectorAll('.draggable-option').forEach(el => {
+          el.addEventListener('dragstart', (e) => {
+            draggedOpt = el.getAttribute('data-opt');
+            e.dataTransfer.setData('text/plain', draggedOpt);
+            setTimeout(() => el.classList.add('dragging'), 0);
+          });
+          el.addEventListener('dragend', () => {
+            el.classList.remove('dragging');
           });
         });
+
+        // Setup drop targets
+        document.querySelectorAll('.matching-target').forEach(target => {
+          target.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            target.classList.add('drag-over');
+          });
+          target.addEventListener('dragleave', () => {
+            target.classList.remove('drag-over');
+          });
+          target.addEventListener('drop', (e) => {
+            e.preventDefault();
+            target.classList.remove('drag-over');
+            const optVal = e.dataTransfer.getData('text/plain');
+            if (optVal) {
+              const pIdx = parseInt(target.getAttribute('data-pair-idx'));
+              if (!res.answers) res.answers = [];
+              res.answers[pIdx] = optVal;
+              userResponses[q.id] = res;
+              renderQuestion(currentIndex); // Re-render to update UI
+            }
+          });
+        });
+
+        // Setup pool as a drop target to remove answers
+        const pool = document.getElementById('matchingPool');
+        if (pool) {
+          pool.addEventListener('dragover', (e) => e.preventDefault());
+          pool.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const optVal = e.dataTransfer.getData('text/plain');
+            if (optVal && res.answers) {
+              const idx = res.answers.indexOf(optVal);
+              if (idx !== -1) {
+                res.answers[idx] = null;
+                userResponses[q.id] = res;
+                renderQuestion(currentIndex);
+              }
+            }
+          });
+        }
       } else if (q.type === 'true_false_group') {
         document.querySelectorAll('.tf-btn').forEach(btn => {
           btn.addEventListener('click', () => {
