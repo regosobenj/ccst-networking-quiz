@@ -248,6 +248,7 @@ async function sha256(message) {
 
       item.addEventListener('click', () => {
         currentIndex = idx;
+        saveState();
         renderQuestion(currentIndex);
       });
 
@@ -258,6 +259,10 @@ async function sha256(message) {
   function renderQuestion(idx) {
     const q = questions[idx];
     if (!q) return;
+
+    // Save index in case page reloads
+    currentIndex = idx;
+    saveState();
 
     // Update bottom nav state
     btnPrev.disabled = idx === 0;
