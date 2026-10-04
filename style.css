@@ -886,29 +886,6 @@ body {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
   }
-  .sidebar-top {
-    cursor: pointer;
-    padding: 0.5rem 0;
-    user-select: none;
-  }
-  .sidebar-content {
-    display: none; /* Hidden by default on mobile/tablet */
-    padding-top: 1rem;
-    animation: loginFadeIn 0.2s ease-out;
-  }
-  .sidebar.expanded .sidebar-content {
-    display: flex;
-    flex-direction: column;
-  }
-  .sidebar-toggle-icon {
-    display: inline-block;
-    transition: transform 0.2s;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-  }
-  .sidebar.expanded .sidebar-toggle-icon {
-    transform: rotate(180deg);
-  }
   .card-container {
     padding: 1rem;
   }
@@ -941,6 +918,31 @@ body {
     font-size: 0.75rem;
   }
   
+  /* Dropdown for sidebar contents on phones */
+  .sidebar-top {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    user-select: none;
+  }
+  .sidebar-content {
+    display: none; /* Hidden by default on phones */
+    padding-top: 1rem;
+    animation: loginFadeIn 0.2s ease-out;
+  }
+  .sidebar.expanded .sidebar-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-toggle-icon {
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .sidebar.expanded .sidebar-toggle-icon {
+    transform: rotate(180deg);
+  }
+
   /* Horizontal swiping for question grid on phones */
   .sidebar {
     max-height: none; /* Remove height constraint */

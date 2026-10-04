@@ -258,6 +258,12 @@ async function sha256(message) {
         currentIndex = idx;
         saveState();
         renderQuestion(currentIndex);
+        
+        // On mobile, collapse the sidebar dropdown after picking a question
+        if (window.innerWidth <= 600) {
+          const sidebar = document.getElementById('sidebar');
+          if (sidebar) sidebar.classList.remove('expanded');
+        }
       });
 
       questionGrid.appendChild(item);
