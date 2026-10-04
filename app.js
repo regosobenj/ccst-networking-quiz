@@ -346,7 +346,18 @@ async function sha256(message) {
 
   function renderMultipleChoice(q, res, isSubmitted) {
     let out = '<div class="options-list">';
-    q.options.forEach(opt => {
+    
+    // Shuffle options if not already shuffled for this session/attempt
+    if (!res.shuffledOptions) {
+      // Copy array and shuffle using Fisher-Yates
+      res.shuffledOptions = [...q.options];
+      for (let i = res.shuffledOptions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [res.shuffledOptions[i], res.shuffledOptions[j]] = [res.shuffledOptions[j], res.shuffledOptions[i]];
+      }
+    }
+
+    res.shuffledOptions.forEach(opt => {
       const isSelected = res.answers.includes(opt);
       const isCorrectOption = q.correct_answers.includes(opt) || (q.correct_letters && q.correct_letters.some(l => opt.startsWith(l + '.')));
       
@@ -357,10 +368,13 @@ async function sha256(message) {
         else if (isSelected && !isCorrectOption) extraClass += ' incorrect-revealed';
       }
 
+      // Hide the hardcoded letter prefix (e.g. "A. ") since they are shuffled,
+      // and let css/flex layout handle the new visual
+      const contentWithoutLetter = opt.match(/^[A-E]\.\s*(.*)/) ? opt.replace(/^[A-E]\.\s*/, '') : opt;
+
       out += `
         <div class="option-item ${extraClass}" data-option="${escapeHtml(opt)}">
-          <span class="option-letter">${escapeHtml(opt.slice(0, 2))}</span>
-          <span class="option-label">${escapeHtml(opt.slice(3) || opt)}</span>
+          <span class="option-label" style="padding-left:10px;">${escapeHtml(contentWithoutLetter)}</span>
         </div>
       `;
     });
@@ -495,6 +509,7 @@ async function sha256(message) {
     if (btnTryAgain) {
       btnTryAgain.addEventListener('click', () => {
         delete userResponses[q.id];
+        delete res.shuffledOptions;
         saveState();
         renderQuestion(currentIndex);
         renderGrid();
