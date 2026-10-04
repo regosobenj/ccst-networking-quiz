@@ -217,6 +217,17 @@ body {
   border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
+.sidebar-toggle-icon {
+  display: none; /* Hidden on desktop */
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+}
+
 .sidebar-filters {
   display: flex;
   flex-direction: column;
@@ -871,9 +882,32 @@ body {
   }
   .sidebar {
     width: 100%;
-    max-height: 400px;
+    max-height: none;
     border-right: none;
     border-bottom: 1px solid var(--border-color);
+  }
+  .sidebar-top {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    user-select: none;
+  }
+  .sidebar-content {
+    display: none; /* Hidden by default on mobile/tablet */
+    padding-top: 1rem;
+    animation: loginFadeIn 0.2s ease-out;
+  }
+  .sidebar.expanded .sidebar-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-toggle-icon {
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .sidebar.expanded .sidebar-toggle-icon {
+    transform: rotate(180deg);
   }
   .card-container {
     padding: 1rem;

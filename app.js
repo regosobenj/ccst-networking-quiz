@@ -135,6 +135,14 @@ async function sha256(message) {
       saveState();
     });
 
+    const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+    const sidebar = document.getElementById('sidebar');
+    if (sidebarToggleBtn && sidebar) {
+      sidebarToggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('expanded');
+      });
+    }
+
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase();
       renderGrid();

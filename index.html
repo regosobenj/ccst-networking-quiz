@@ -69,13 +69,17 @@
   <!-- Main Container -->
   <div class="app-layout">
     <!-- Sidebar / Question Navigator -->
-    <aside class="sidebar">
-      <div class="sidebar-top">
-        <h3>Question Navigator</h3>
-        <span class="badge" id="totalBadge">86 Qs</span>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top" id="sidebarToggleBtn">
+        <h3 id="sidebarTitle">Question Navigator</h3>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="badge" id="totalBadge">86 Qs</span>
+          <span class="sidebar-toggle-icon" id="sidebarToggleIcon">▼</span>
+        </div>
       </div>
 
-      <!-- Filter Controls -->
+      <div class="sidebar-content" id="sidebarContent">
+        <!-- Filter Controls -->
       <div class="sidebar-filters">
         <input type="text" id="searchInput" placeholder="Search keywords..." />
         
@@ -104,6 +108,7 @@
       <div class="sidebar-actions">
         <button id="btnResetQuiz" class="btn-secondary btn-sm">↺ Reset Answers</button>
         <button id="btnRevealAll" class="btn-secondary btn-sm">👁️ Reveal All</button>
+      </div>
       </div>
     </aside>
 
