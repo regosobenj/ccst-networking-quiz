@@ -120,6 +120,7 @@ async function sha256(message) {
       studyMode = true;
       btnStudyMode.classList.add('active');
       btnExamMode.classList.remove('active');
+      document.getElementById('btnFinishExam').style.display = 'none';
       renderQuestion(currentIndex);
     });
 
@@ -127,6 +128,10 @@ async function sha256(message) {
       studyMode = false;
       btnExamMode.classList.add('active');
       btnStudyMode.classList.remove('active');
+      document.getElementById('btnFinishExam').style.display = 'block';
+      
+      // Notify user about exam mode start
+      alert("Exam Mode Started! Check Answer buttons are disabled. Click 'Submit Exam' when finished.");
       renderQuestion(currentIndex);
     });
 
@@ -134,6 +139,142 @@ async function sha256(message) {
       document.body.classList.toggle('light-theme');
       saveState();
     });
+
+    // Event listener for Submit Exam
+    const btnFinishExam = document.getElementById('btnFinishExam');
+    if (btnFinishExam) {
+      btnFinishExam.addEventListener('click', () => {
+        const total = questions.length;
+        let answered = 0;
+        
+        questions.forEach(q => {
+          const res = userResponses[q.id];
+          if (res && res.answers && res.answers.length > 0) {
+            answered++;
+          }
+        });
+        
+        if (answered < total) {
+          if (!confirm(`You have only answered ${answered} out of ${total} questions.\nAre you sure you want to submit your exam now?`)) {
+            return;
+          }
+        }
+        
+        // Calculate score
+        let correctCount = 0;
+        let wrongQuestions = [];
+        let domainFails = {};
+        
+        questions.forEach(q => {
+          if (!domainFails[q.category]) {
+            domainFails[q.category] = { total: 0, wrong: 0 };
+          }
+          domainFails[q.category].total++;
+          
+          const res = userResponses[q.id] || { answers: [] };
+          let isCorrect = false;
+          
+          if (res.answers.length > 0) {
+            if (q.type === 'multiple_choice') {
+              if (q.is_multiple_response) {
+                const expected = q.correct_answers || [];
+                isCorrect = (expected.length === res.answers.length) && expected.every(a => res.answers.includes(a));
+              } else {
+                isCorrect = q.correct_answers.includes(res.answers[0]) || (q.correct_letters && q.correct_letters.some(l => res.answers[0].startsWith(l + '.')));
+              }
+            } else if (q.type === 'matching') {
+              isCorrect = q.pairs.every((p, idx) => res.answers[idx] === p.answer);
+            } else if (q.type === 'true_false_group') {
+              isCorrect = q.items.every((it, idx) => res.answers[idx] === it.answer);
+            } else if (q.type === 'text_input') {
+              isCorrect = q.accepted_answers.some(a => a.toLowerCase() === (res.answers[0] || '').toLowerCase().trim());
+            } else if (q.type === 'interactive_config') {
+              isCorrect = q.fields.every((f, idx) => (res.answers[idx] || '').trim() === f.expected);
+            }
+          }
+          
+          if (isCorrect) correctCount++;
+          else {
+            domainFails[q.category].wrong++;
+            wrongQuestions.push({ q, userChoice: res.answers });
+          }
+          
+          if (!userResponses[q.id]) userResponses[q.id] = { answers: [] };
+          userResponses[q.id].submitted = true;
+          userResponses[q.id].isCorrect = isCorrect;
+        });
+        
+        const percentage = Math.round((correctCount / total) * 100);
+        
+        // Build Result HTML
+        let resultHtml = `
+          <div style="text-align:center; padding: 1rem 0;">
+            <h2 style="color:var(--accent-cyan); margin-bottom:0.5rem; font-size:1.8rem;">Exam Completed!</h2>
+            <div style="font-size:3rem; font-weight:800; color:${percentage >= 70 ? 'var(--accent-green)' : 'var(--accent-red)'}">
+              ${percentage}%
+            </div>
+            <p style="color:var(--text-secondary); margin-bottom:1.5rem;">Score: ${correctCount} / ${total} Correct</p>
+          </div>
+          
+          <h3 style="margin-top:1rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">Domain Breakdown</h3>
+          <ul style="list-style:none; margin-top:0.5rem; padding:0; display:flex; flex-direction:column; gap:0.5rem;">
+        `;
+        
+        for (const [domain, stats] of Object.entries(domainFails)) {
+          const correctInDomain = stats.total - stats.wrong;
+          const domPerc = Math.round((correctInDomain / stats.total) * 100);
+          resultHtml += `
+            <li style="display:flex; justify-content:space-between; background:var(--bg-card-hover); padding:0.5rem 1rem; border-radius:4px;">
+              <span>${escapeHtml(domain)}</span>
+              <span style="color:${domPerc >= 70 ? 'var(--accent-green)' : 'var(--accent-red)'}; font-weight:bold;">${domPerc}% (${correctInDomain}/${stats.total})</span>
+            </li>
+          `;
+        }
+        
+        resultHtml += `</ul>
+          <h3 style="margin-top:1.5rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">Incorrect Questions (Review)</h3>
+          <div style="max-height: 250px; overflow-y:auto; margin-top:0.5rem; display:flex; flex-direction:column; gap:0.75rem;">
+        `;
+        
+        if (wrongQuestions.length === 0) {
+          resultHtml += `<p style="color:var(--accent-green);">Perfect score! No mistakes.</p>`;
+        } else {
+          wrongQuestions.forEach(item => {
+            resultHtml += `
+              <div style="background:var(--bg-card-hover); padding:0.75rem; border-radius:4px; font-size:0.85rem; border-left:3px solid var(--accent-red);">
+                <div style="font-weight:600; margin-bottom:4px;">Q: ${escapeHtml(item.q.question)}</div>
+                <div style="color:var(--accent-red); margin-bottom:2px;">Your Answer: ${item.userChoice.length > 0 ? escapeHtml(item.userChoice.join(', ')) : '<i>Blank</i>'}</div>
+                <div style="color:var(--accent-green);">Correct Answer: 
+                  ${item.q.type === 'multiple_choice' ? escapeHtml((item.q.correct_answers || []).join(', ')) : 'Check specific question box'}
+                </div>
+              </div>
+            `;
+          });
+        }
+        
+        resultHtml += `</div>`;
+        
+        // Hijack the modal
+        modalTitle.textContent = "Exam Results";
+        document.getElementById('modalImage').style.display = 'none'; // hide image
+        
+        let resultsContainer = document.getElementById('examResultsContainer');
+        if (!resultsContainer) {
+          resultsContainer = document.createElement('div');
+          resultsContainer.id = 'examResultsContainer';
+          document.querySelector('.modal-body').appendChild(resultsContainer);
+        }
+        resultsContainer.style.display = 'block';
+        resultsContainer.innerHTML = resultHtml;
+        
+        imageModal.classList.remove('hidden');
+        
+        saveState();
+        renderGrid();
+        renderQuestion(currentIndex);
+        updateStats();
+      });
+    }
 
     const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
     const sidebar = document.getElementById('sidebar');
@@ -192,11 +333,17 @@ async function sha256(message) {
     // Modal Events
     closeModal.addEventListener('click', () => {
       imageModal.classList.add('hidden');
+      document.getElementById('modalImage').style.display = 'block';
+      const resultsContainer = document.getElementById('examResultsContainer');
+      if (resultsContainer) resultsContainer.style.display = 'none';
     });
 
     imageModal.addEventListener('click', (e) => {
       if (e.target === imageModal) {
         imageModal.classList.add('hidden');
+        document.getElementById('modalImage').style.display = 'block';
+        const resultsContainer = document.getElementById('examResultsContainer');
+        if (resultsContainer) resultsContainer.style.display = 'none';
       }
     });
 
@@ -259,8 +406,8 @@ async function sha256(message) {
         saveState();
         renderQuestion(currentIndex);
         
-        // On mobile, collapse the sidebar dropdown after picking a question
-        if (window.innerWidth <= 600) {
+        // On mobile/tablet, collapse the sidebar dropdown after picking a question
+        if (window.innerWidth <= 1000) {
           const sidebar = document.getElementById('sidebar');
           if (sidebar) sidebar.classList.remove('expanded');
         }
@@ -358,7 +505,20 @@ async function sha256(message) {
           ${q.is_multiple_response ? '<small style="color:var(--accent-cyan); font-weight:600;">(Select all correct options)</small>' : ''}
         </div>
         <div>
-          ${!isSubmitted ? `<button id="btnSubmitAnswer" class="btn-primary">Check Answer</button>` : `<button id="btnTryAgain" class="btn-secondary">↺ Try Again</button>`}
+    `;
+    
+    if (studyMode) {
+      if (!isSubmitted) {
+        html += `<button id="btnSubmitAnswer" class="btn-primary">Check Answer</button>`;
+      } else {
+        html += `<button id="btnTryAgain" class="btn-secondary">↺ Try Again</button>`;
+      }
+    } else {
+      // In Exam mode, individual questions don't have Check/Try Again.
+      // We rely on the global 'Next' button to navigate, and a global 'Finish Exam' button to score.
+    }
+    
+    html += `
         </div>
       </div>
     </div>`;
@@ -561,10 +721,6 @@ async function sha256(message) {
               res.answers = [optVal];
               document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
               el.classList.add('selected');
-              if (studyMode) {
-                // In study mode with single choice, auto-check answer
-                evaluateAnswer(q);
-              }
             }
             userResponses[q.id] = res;
           });
