@@ -581,7 +581,18 @@ async function sha256(message) {
 
     if (q.type === 'multiple_choice') {
       if (!res.answers || res.answers.length === 0) {
-        alert('Please select an option before checking.');
+        // Find or create warning message
+        let warnMsg = document.getElementById('selectionWarning');
+        if (!warnMsg) {
+          warnMsg = document.createElement('div');
+          warnMsg.id = 'selectionWarning';
+          warnMsg.style.color = 'var(--accent-amber)';
+          warnMsg.style.marginTop = '10px';
+          warnMsg.style.fontWeight = 'bold';
+          const container = document.querySelector('.options-container');
+          if (container) container.parentNode.insertBefore(warnMsg, container.nextSibling);
+        }
+        warnMsg.textContent = '⚠️ Please select an option first.';
         return;
       }
       // Check if user selected options match correct answers
@@ -597,21 +608,51 @@ async function sha256(message) {
     } else if (q.type === 'matching') {
       const answers = res.answers || [];
       if (answers.length < q.pairs.length || answers.some(a => !a)) {
-        alert('Please select a matching option for all items.');
+        let warnMsg = document.getElementById('selectionWarning');
+        if (!warnMsg) {
+          warnMsg = document.createElement('div');
+          warnMsg.id = 'selectionWarning';
+          warnMsg.style.color = 'var(--accent-amber)';
+          warnMsg.style.marginTop = '10px';
+          warnMsg.style.fontWeight = 'bold';
+          const container = document.querySelector('.matching-container');
+          if (container) container.parentNode.insertBefore(warnMsg, container.nextSibling);
+        }
+        warnMsg.textContent = '⚠️ Please complete all matches first.';
         return;
       }
       isCorrect = q.pairs.every((pair, idx) => answers[idx] === pair.answer);
     } else if (q.type === 'true_false_group') {
       const answers = res.answers || [];
       if (answers.length < q.items.length || answers.some(a => !a)) {
-        alert('Please answer True or False for all statements.');
+        let warnMsg = document.getElementById('selectionWarning');
+        if (!warnMsg) {
+          warnMsg = document.createElement('div');
+          warnMsg.id = 'selectionWarning';
+          warnMsg.style.color = 'var(--accent-amber)';
+          warnMsg.style.marginTop = '10px';
+          warnMsg.style.fontWeight = 'bold';
+          const container = document.querySelector('.tf-group');
+          if (container) container.parentNode.insertBefore(warnMsg, container.nextSibling);
+        }
+        warnMsg.textContent = '⚠️ Please answer True or False for all statements.';
         return;
       }
       isCorrect = q.items.every((it, idx) => answers[idx] === it.answer);
     } else if (q.type === 'text_input') {
       const text = (res.answers && res.answers[0]) ? res.answers[0].toLowerCase().trim() : '';
       if (!text) {
-        alert('Please type an answer.');
+        let warnMsg = document.getElementById('selectionWarning');
+        if (!warnMsg) {
+          warnMsg = document.createElement('div');
+          warnMsg.id = 'selectionWarning';
+          warnMsg.style.color = 'var(--accent-amber)';
+          warnMsg.style.marginTop = '10px';
+          warnMsg.style.fontWeight = 'bold';
+          const container = document.querySelector('.input-answer-container');
+          if (container) container.parentNode.insertBefore(warnMsg, container.nextSibling);
+        }
+        warnMsg.textContent = '⚠️ Please type an answer first.';
         return;
       }
       isCorrect = q.accepted_answers.some(ans => text === ans.toLowerCase().trim() || text.includes(ans.toLowerCase().trim()));
