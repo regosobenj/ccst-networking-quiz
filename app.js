@@ -273,7 +273,13 @@ async function sha256(message) {
     // Update grid active state
     document.querySelectorAll('.grid-item').forEach(el => el.classList.remove('current'));
     const currentGridEl = Array.from(questionGrid.children).find(el => el.textContent == idx + 1);
-    if (currentGridEl) currentGridEl.classList.add('current');
+    if (currentGridEl) {
+      currentGridEl.classList.add('current');
+      // On mobile (when grid is horizontal), scroll the active item into view
+      if (window.innerWidth <= 600) {
+        currentGridEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
 
     const res = userResponses[q.id] || { answers: [], isCorrect: false, submitted: false };
     const isSubmitted = res.submitted;

@@ -906,6 +906,35 @@ body {
     padding: 0.4rem;
     font-size: 0.75rem;
   }
+  
+  /* Horizontal swiping for question grid on phones */
+  .sidebar {
+    max-height: none; /* Remove height constraint */
+  }
+  .question-grid {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    max-height: none; /* Override desktop max-height */
+    gap: 0.5rem;
+  }
+  .grid-item {
+    flex: 0 0 45px; /* Fixed width for swipeable items */
+    scroll-snap-align: start;
+  }
+  .filter-chips {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .chip {
+    flex-shrink: 0;
+  }
+  
   .question-card {
     padding: 1rem;
   }
