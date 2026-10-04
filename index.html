@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cisco CCST Networking Certification Practice Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Login Gate -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-card">
+      <div class="login-logo">
+        <span class="login-logo-icon">🌐</span>
+        <h1 class="login-title">CCST Networking</h1>
+        <p class="login-subtitle">Exam Certification Simulator & Reviewer</p>
+      </div>
+      <div class="login-body">
+        <p class="login-hint">Enter the access code to continue</p>
+        <input type="password" id="loginPassword" class="login-input" placeholder="Access Code" autocomplete="off" />
+        <div id="loginError" class="login-error hidden">Incorrect access code. Try again.</div>
+        <button id="loginBtn" class="login-submit">🔓 Enter Quiz</button>
+      </div>
+      <p class="login-footer-text">Private reviewer — authorized users only</p>
+    </div>
+  </div>
+  <!-- Top Navigation Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-badge">
+        <span class="logo-icon">🌐</span>
+        <div class="logo-text">
+          <h1>CCST Networking</h1>
+          <span class="sub">Exam Certification Simulator & Reviewer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="stats-ticker">
+        <div class="stat-item">
+          <span class="stat-label">Progress</span>
+          <span class="stat-val" id="progressVal">0 / 86</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Accuracy</span>
+          <span class="stat-val" id="accuracyVal">0%</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Bookmarked</span>
+          <span class="stat-val" id="bookmarksVal">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="mode-toggles">
+        <button id="btnStudyMode" class="btn-toggle active" title="Instant answers & explanations">📖 Study Mode</button>
+        <button id="btnExamMode" class="btn-toggle" title="Timed exam simulation">⏱️ Exam Mode</button>
+      </div>
+      <button id="btnThemeToggle" class="btn-icon" title="Toggle Theme">🌓</button>
+      <button id="btnLogout" class="btn-icon" title="Logout">🚪</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="app-layout">
+    <!-- Sidebar / Question Navigator -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <h3>Question Navigator</h3>
+        <span class="badge" id="totalBadge">86 Qs</span>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="sidebar-filters">
+        <input type="text" id="searchInput" placeholder="Search keywords..." />
+        
+        <select id="categoryFilter">
+          <option value="ALL">All Domains (5 Domains)</option>
+          <option value="Standard Concepts">1.0 Standard Concepts</option>
+          <option value="Security">2.0 Security</option>
+          <option value="Endpoints & Media Types">3.0 Endpoints & Media</option>
+          <option value="Infrastructure">4.0 Infrastructure</option>
+          <option value="Diagnosing Problems">5.0 Diagnosing Problems</option>
+        </select>
+
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="unanswered">Unanswered</button>
+          <button class="chip" data-filter="incorrect">Incorrect</button>
+          <button class="chip" data-filter="flagged">★ Flagged</button>
+          <button class="chip" data-filter="diagrams">🖼️ Diagram Qs</button>
+        </div>
+      </div>
+
+      <!-- Question Number Grid -->
+      <div class="question-grid" id="questionGrid"></div>
+
+      <!-- Quick Actions -->
+      <div class="sidebar-actions">
+        <button id="btnResetQuiz" class="btn-secondary btn-sm">↺ Reset Answers</button>
+        <button id="btnRevealAll" class="btn-secondary btn-sm">👁️ Reveal All</button>
+      </div>
+    </aside>
+
+    <!-- Quiz Content Panel -->
+    <main class="quiz-content">
+      <!-- Progress Bar -->
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+      </div>
+
+      <!-- Question Card Container -->
+      <div id="cardContainer" class="card-container">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="quiz-footer">
+        <button id="btnPrev" class="btn-nav">← Previous</button>
+        <div class="footer-center">
+          <span id="qIndexText">Question 1 of 86</span>
+          <span class="pdf-ref-badge" id="pdfRefBadge">Slide #5</span>
+        </div>
+        <button id="btnNext" class="btn-nav">Next →</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Image Modal / Zoom View -->
+  <div id="imageModal" class="modal-overlay hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span class="modal-title" id="modalTitle">Diagram & Topology Inspector</span>
+        <button id="closeModal" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Enlarged Diagram" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

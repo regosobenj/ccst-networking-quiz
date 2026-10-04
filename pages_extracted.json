@@ -1,0 +1,596 @@
+[
+  {
+    "page_num": 1,
+    "text": "CCST NETWORKING\nReview Certification \n",
+    "image_file": "images/page_1.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 2,
+    "text": "Exam Tips\n•\nPractical Understanding: The exam may present real-world scenarios; ensure you can apply \ntheoretical concepts to practical situations.\n•\nHands-On Practice: Use networking simulators or physical devices to reinforce the concepts.\n•\nReview Key Terms: Make sure you are familiar with networking terminology and acronyms.\n•\nStudy Group: Engage in study groups or forums for collaboration and knowledge exchange. \n•\nReview Each Topic Thoroughly:\nThe following topics form the foundation of the CCST Networking certification. Be sure to familiarize \nyourself with each area and practice applying the concepts:\nGood luck, and remember: \nFocus on mastering the concepts to ensure success on the certification exam!\n",
+    "image_file": "images/page_2.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 3,
+    "text": "Standard \nConcepts\n",
+    "image_file": "images/page_3.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 4,
+    "text": "Cisco Certified Support Technician (CCST) Networking\nStandard Concepts\n•\n1.1. Identify the fundamental conceptual building blocks of networks.\n•\nTCP/IP model, OSI model, frames and packets, addressing\n•\n1.2. Differentiate between bandwidth and throughput.\n•\nLatency, delay, speed test vs. Iperf\n•\n1.3. Differentiate between LAN, WAN, MAN, CAN, PAN, and WLAN.\n•\nIdentify and illustrate common physical and logical network topologies.\n•\n1.4. Compare and contrast cloud and on-premises applications and services.\n•\nPublic, private, hybrid, SaaS, PaaS, IaaS, remote work/hybrid work\n•\n1.5. Describe common network applications and protocols.\n•\nTCP vs. UDP (connection-oriented vs. connectionless), FTP, SFTP, TFTP, HTTP, HTTPS, DHCP, DNS, ICMP,\nNTP\n",
+    "image_file": "images/page_4.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 5,
+    "text": "How is given the IP Address 172.16.199.25 and the \nsubnet mask 255.255.252.0. What is the CIDR \nnotation for this address?\nA. 172.16.100.25/22\nB. 172.16.100.25/21\nC. 172.16.100.25/23\nD. 172.16.100.25/20\n",
+    "image_file": "images/page_5.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 6,
+    "text": "How is the following IP address written when using a\nCIDR notation?\nIP Address: 192.168.0.16\nSubnet Mask: 255.255.255.240\nA. 192.168.0.16/30\nB. 192.168.0.16/15\nC. 192.168.0.16/28\nD. 192.168.0.16/24\n",
+    "image_file": "images/page_6.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 7,
+    "text": "What is the CIDR prefix notation for a subnet mask\nof 255.255.0.0?\nA. /24\nB. /8\nC. /16\nD. 32\n",
+    "image_file": "images/page_7.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 8,
+    "text": "A host is given the IP address 172.16.100.25 and the\nsubnet mask 255.255.252.0.\nA. 172.16.100.25 /23\nB. 172.16.100.25 /20\nC. 172.16.100.25 /21\nD. 172.16.100.25 /22\n",
+    "image_file": "images/page_8.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 9,
+    "text": "Which address is included in the 192.168.200.0/24\nnetwork?\nA. 192.168.199.13\nB. 192.168.200.13\nC. 192.168.201.13\nD. 192.168.1.13\n",
+    "image_file": "images/page_9.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 10,
+    "text": "What is the most compressed valid format of the IPv6\naddress 2001 :0db8:0000:0016:0000:001b: 2000:0056?\nA. 2001:db8: : 16: : 1b:2:56\nB. 2001:db8: : 16: : 1b: 2000: 56\nC. 2001:db8: 16: :1b:2:56\nD. 2001:db8: 0:16: :1b: 2000:56\n",
+    "image_file": "images/page_10.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 11,
+    "text": "Which address is included in the 192.168.200.0/24\nnetwork?\nA. 192.168.200.13\nB. 192.168.201.13\nC. 192.168.1.13\nD. 192.168.199.13\n",
+    "image_file": "images/page_11.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 12,
+    "text": "Which address is a link-local IPV6 address?\nA. FDF8:F535:82EF::53\nB. FE80::261:2EFE:FE10:765\nC. 2001:0db8:85a3:0000:0000:8a2e:0370:7334\nD. 2401:db00:21:70e4:face:0:3:0\n",
+    "image_file": "images/page_12.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 13,
+    "text": "At which OSI layer is the data stream broken up into \nsegments that include source and destination port \nnumbers?\nA.Network\nB.Session\nC.Transport\nD.Data Link\n",
+    "image_file": "images/page_13.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 14,
+    "text": "Which information is included in the header of UDP \nsegment?\nA.Port Numbers\nB.IP Address\nC.Sequence Numbers\nD.Mac Address\n",
+    "image_file": "images/page_14.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 15,
+    "text": "During the data encapsulation process which OSI layer adds a header \nthat contains MAC addressing information and a trailer used for error \nchecking.\nA.Network\nB.Session\nC.Transport\nD.Data Link\n",
+    "image_file": "images/page_15.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 16,
+    "text": "Which protocol allows you to securely upload files \nto another computer on the internet?\nA.SFTP\nB.HTTP\nC.NTP\nD.ICMP\n",
+    "image_file": "images/page_16.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 17,
+    "text": "Move each of the protocol on the left to its their\ncharacteristics on the right\n[SFTP, TFTP, DNS, DHCP, ICMP]\n•Enables the use of SSH keys to prevent impostor from connecting to the server.\n•Ensures data integrity and data security for the file transfers using port 22.\n•Enables backup of network and router configuration files using UDP.\n•Transfer small files within a LAN using port 69.\n•Perform a query to translate companypro.net to an IP Address.\n•Assign the reserved IP Address 10.10.10.200 to a web server at your company.\n•Perform a ping to ensure that a server is responding to network connections.\nSFTP\nSFTP\nTFTP\nTFTP\nDNS\nDHCP\nICMP\n",
+    "image_file": "images/page_17.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 18,
+    "text": "Move each protocol or device type from the list on \nthe left to the correct OSI layer on the \nright. Protocol and Device Type.\n• Physical\n• Data Link\n• Network\n• Application\n• Transport\nSMTP, FTP\nTCP,UDP\nCable Hub, NIC\nSwitch\nRouter\nPhysical\nnetwork\nApplication\ntransport\ndata link\n",
+    "image_file": "images/page_18.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 19,
+    "text": "Move each protocol from the list on the left to the \ncorrect TCP/IP model layer on the right.\n• TCP\n• IP\n• FTP\n•\nEthernet\nInternetwork\nApplication\nTransport\nNetwork\nFTP\nIP\nTCP\nEthernet\n",
+    "image_file": "images/page_19.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 20,
+    "text": "Move each category on the left to its correct\ndefinition on the right\nLAN\nPAN\nWAN\n•Connects devices such as computers, telephones, tables, and printers within a range of\nabout 10 meters.\n•Spans a small area such as a room, home, office building or small group of building.\n•Spans a large geographical distance and connects smaller networks over leased lines and\nVPN’s or tunnels.\nPAN\nLAN\nWAN\n",
+    "image_file": "images/page_20.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 21,
+    "text": "Which command will display all the current \noperational settings configured on a Cisco router?\nA. show protocols\nB. show startup-config\nC. show version\nD. show running-config\n",
+    "image_file": "images/page_21.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 22,
+    "text": "For each statement about bandwidth and \nthroughput. Select True or False\n• High levels of network latency decreases network bandwidth.\n• Low Bandwidth can increase network latency.\n• You can increase throughput by decreasing network .\nF\nT\nT\n",
+    "image_file": "images/page_22.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 23,
+    "text": "Move each cloud computing service model from the\nlist on the left to the correct example on the right.\nLAAS\nSAAS\nPAAS\n•A company develops application using cloud-based resources and tools.\n•These virtual machines are connected by a virtual network in the cloud\n•User access a web-based graphics design application in the cloud for a monthly fee\nPAAS\nIAAS\nSAAS\n",
+    "image_file": "images/page_23.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 24,
+    "text": "Move each cloud service model on the left to its\ncorrect description on the right. Cloud Services\nModel\nLAAS\nSAAS\nPAAS\n•Provides the hardware and software needed for developing, running, and managing\napplications.\n•Provide pay-as-you-go access to resources provided on virtual machines and virtual\nstorage.\n•Provide on-demand access to applications delivered remotely over the internet.\nPAAS\nIAAS\nSAAS\n",
+    "image_file": "images/page_24.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 25,
+    "text": "Which protocol does an IPv6 host use to resolve the\nMAC address associated with a destination IPv6\naddress?\nA. Address Resolution Protocol (ARP)\nB. Cisco Discovery Protocol (CDP)\nC. Neighbor Discovery Protocol (NDP)\nD. Dynamic Host Configuration Protocol (DHCP)\n",
+    "image_file": "images/page_25.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 26,
+    "text": "Which protocol is used by IPV6 enabled host to\nperform automatic stateless address configuration?\nA. DHCPV6\nB. ICMPV6\nC. TFTP\nD. DNS\n",
+    "image_file": "images/page_26.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 27,
+    "text": "During the data encapsulation process, which OSI layer\nadds a header that contains MAC addressing information\nand a trailer used for error checking?\nA. Network\nB. Transport\nC. Data Link\nD. Session\n",
+    "image_file": "images/page_27.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 28,
+    "text": "A user initiates a trouble ticket stating that an external web page is\nnot loading. You determine that other resources both internal and\nexternal are still reachable.\nWhich command can you use to help locate where the issue is in\nthe network path to the external web page?\nA. ping -t\nB. tracert\nC. ipconfig/all\nD. nslookup\n",
+    "image_file": "images/page_28.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 29,
+    "text": "Which two statements are true about the IPv4\naddress of the default gateway configured on a host?\n(Choose 2.)Note: You will receive partial credit for each\ncorrect selection.\nA.\nThe IPv4 address of the default gateway must be the first host address in the subnet.\nB.\nThe same default gateway IPv4 address is configured on each host on the local network.\nC.\nThe default gateway is the Loopback0 interface IPv4 address of the router connected to the same local \nnetwork as the host.\nD.\nThe default gateway is the IPv4 address of the router interface connected to the same local network as \nthe host.\nE.\nHosts learn the default gateway IPv4 address through router advertisement messages.\n",
+    "image_file": "images/page_29.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 30,
+    "text": "Which two statements are true about the IPv4\naddress of the default gateway configured on a host?\n(Choose 2.)Note: You will receive partial credit for each\ncorrect selection.\nA.\nThe IPv4 address of the default gateway must be the first host address in the subnet.\nB.\nThe same default gateway IPv4 address is configured on each host on the local network.\nC.\nThe default gateway is the Loopback0 interface IPv4 address of the router connected to the same local \nnetwork as the host.\nD.\nThe default gateway is the IPv4 address of the router interface connected to the same local network as \nthe host.\nE.\nHosts learn the default gateway IPv4 address through router advertisement messages.\n",
+    "image_file": "images/page_30.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 31,
+    "text": "An engineer configured a new VLAN named VLAN2 for the Data\nCenter team. When the team tries to ping addresses outside\nVLAN2 from a computer in VLAN2, they are unable to reach them.\nWhat should the engineer configure?\nA. Additional VLAN\nB. Default route\nC. Default gateway\nD. Static route\n",
+    "image_file": "images/page_31.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 32,
+    "text": "Which information is included in the header of a UDP\nsegment?\nA. IP addresses\nB. Sequence numbers\nC. Port numbers\nD. MAC addresses\n",
+    "image_file": "images/page_32.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 33,
+    "text": "What is the purpose of assigning an IP address to the\nmanagement VLAN interface on a Layer 2 switch?\nA. To enable access to the CLI on the switch through Telnet or SSH\nB. To enable the switch to provide DHCP services to other switches in the network\nC. To enable the switch to act as a default gateway for the attached devices\nD. To enable the switch to resolve URLs for the attached the devices\n",
+    "image_file": "images/page_33.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 34,
+    "text": "Which of the following is a characteristic of the\nSpanning Tree Protocol (STP)?\nA. prevents loops in a network by blocking redundant links.\nB. provides load balancing across multiple paths in a network.\nC. prioritizes network traffic based on Quality of Service (QoS) settings.\nD. allows for rapid convergence by eliminating the need for spanning tree calculations.\n",
+    "image_file": "images/page_34.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 35,
+    "text": "What protocol is used by OSPF to form neighbor\nrelationships and exchange routing information?\nA. CP (Control Protocol)\nB. P (Protocol)\nC. MP (Multiprotocol)\nD. Llo (Link-Local Operations)\n",
+    "image_file": "images/page_35.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 36,
+    "text": "What information is contained in the MAC address\ntable of a switch?\nA. Dynamically learned Layer2 and Layer3 addresses of devices communicating on active ports on the \nswitch\nB. The MAC addresses of devices communicating on active ports and static MAC addresses configured by \nthe administrator\nC. All active ports on the switch and the host Layer3 addresses that were dynamically learned on each \nport.\nD. MAC addresses to IP Address mappings learned through ARP requests or manually configured by the \nadministrator\n",
+    "image_file": "images/page_36.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 37,
+    "text": "What is the purpose of a subnet mask?\nA. determine the network portion of an IP address\nB. determine the host portion of an IP address\nC. determine the default gateway for a network\nD. determine the DNS server for a network\n",
+    "image_file": "images/page_37.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 38,
+    "text": "A user at you company cannot connect to website on the internet.\nHowever, they can connect to network resources on the company\nLAN. You want to use the divide and conquer approach to\ntroubleshoot the issue. What should you do first?\nA. Run the Telnet command from the user’s computer\nB. Ping the default gateway from the user’s computer\nC. Check the computer’s cable connections\nD. Check the computer's network adapter\n",
+    "image_file": "images/page_38.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 39,
+    "text": "Your company has 20 Cisco switches throughout its\nbuilding. You need to view the configuration of each switch\nfrom the command line. Which protocol should you use?\nA. FTP (File Transfer Protocol)\nB. RDP (Remote Desktop Protocol)\nC.SMTP (Simple Mail Transfer Protocol)\nD. SNMP (Simple Network Management Protocol)\n",
+    "image_file": "images/page_39.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 40,
+    "text": "Security\n",
+    "image_file": "images/page_40.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 41,
+    "text": "Cisco Certified Support Technician (CCST) Networking\nSecurity\n•\n2.1. Describe how firewalls operate to filter traffic.\n•\nFirewalls (blocked ports and protocols); rules deny or permit access\n•\n2.2. Describe foundational security concepts.\n•\nConfidentiality, integrity, and availability (CIA); authentication, authorization, and accounting (AAA);\nMultifactor\nAuthentication\n(MFA);\nencryption,\ncertificates,\nand\npassword\ncomplexity;\nidentity\nstores/databases (Active Directory); threats and vulnerabilities; spam, phishing, malware, and denial of\nservice\n•\n2.3. Configure basic wireless security on a home router (WPAx).\n•\nWPA, WPA2, WPA3; choosing between Personal and Enterprise; wireless security concepts\n",
+    "image_file": "images/page_41.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 42,
+    "text": "Which\ndevice\nprotects\nthe\nnetwork\nby\npermitting\nor\ndenying\ntraffic\nbased\non\nIP\naddress, port number, or application?\nA. Firewall\nB. Access point\nC. VPN gateway\nD. Intrusion detection system\n",
+    "image_file": "images/page_42.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 43,
+    "text": "How does a firewall determine which traffic to block?\nA. The firewall matches traffic based on the IP address in the ARP table\nB. The firewall performs a one-to-many network address translation\nC. The firewall matches the traffic based on source and destination IP address\nD. The firewall performs a one-to-one network address translation.\n",
+    "image_file": "images/page_43.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 44,
+    "text": "You plan to use a network firewall to protect computers at a small\noffice.\nA firewall can block traffic to specific ports on internal computers.\nA firewall can direct all web traffic to a specific IP address.\nA firewall can prevent specific apps from running on a computer.\nTrue\nTrue\nFalse\n",
+    "image_file": "images/page_44.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 45,
+    "text": "Which best describes confidentiality with regards to network\nsecurity?\nA. Ensures data is available for access by providing redundant systems.\nB. Ensures data is not changed during transit between system.\nC. Ensures data is kept secret using safeguards to prevent unauthorized access.\nD. Ensures data is trusted and has not been tampered with or changed\n",
+    "image_file": "images/page_45.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 46,
+    "text": "Which component of the AAA service security model provides\nidentify verification?\nA. Authentication\nB. Accounting\nC. Auditing\nD. Authorization\n",
+    "image_file": "images/page_46.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 47,
+    "text": "When setting up a wireless network which security benefit is\nprovided by enabling WPA3?\nA. Limits network access to only specified devices\nB. Sends traffic through an encrypted tunnel\nC. Secures authentication between client and access point\nD. Makes it more difficult to discover wireless network\n",
+    "image_file": "images/page_47.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 48,
+    "text": "Move the CIA security principles from the list on the left to its\nexample on the right. Confidentiality- Integrity- Availability\nYou generate a digital signature and attach it to a message \nYou encrypt a sensitive email message \nYou configure three redundant web servers at your company -\nIntegrity\nConfidentiality\nAvailability\n",
+    "image_file": "images/page_48.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 49,
+    "text": "Move the MFA factors from the list on the left to their correct \nexamples on he right\nFactors: Possession , Inference, Knowledge\nSpecifying your name and password to log on to a service \nEntering a one-time security code send to your device after logging in \nHolding your phone to your face to be recognized \nKnowledge\nPossession\nInherence\n",
+    "image_file": "images/page_49.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 50,
+    "text": "Move the security options from the list on the left to its\ncharacteristics on the right. You may use each security option\nonce, more than once, or not at all.\nSecurity Options: WEP, WPA2- Personal, WPA-Enterprise\nUses a minimum of 40 bits for encryption \nUse a RADIU Server for authentication \nUse AES and a pre-shared key for authentication\nWEP\nWPA-Enterprise\nWPA2-Personal\n",
+    "image_file": "images/page_50.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 51,
+    "text": "You need to configure wireless settings for a home router.\nMove the actions from the list on the left to the correct scenarios \non the right.\n•\nYou want to prevent users from using the push-\nbutton method for accessing the.\n•\nYou want devices to use a pre-shared key when \nconnecting to the network.\n•\nYou want to prevent devices from discovering the \nname of the WIFI network\no Set the security mode to WPA2-PSK\no Disable SSID broadcasting\no Disable WPS\nDisable SSID broadcasting\nSet the security mode to WPA2-PSK\nDisable WPS\n",
+    "image_file": "images/page_51.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 52,
+    "text": "Which component of the AAA service security model provides\nidentity verification?\nA. Authorization\nB. Auditing\nC. Authentication\nD. Accounting\n",
+    "image_file": "images/page_52.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 53,
+    "text": "Endpoints & \nMedia Types\n",
+    "image_file": "images/page_53.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 54,
+    "text": "Cisco Certified Support Technician (CCST) Networking\nEndpoints and Media Types\n•\n4.1. Identify cables and connectors commonly used in local area networks.\n•\nCable types: fiber, copper, twisted pair; Connector types: coax, RJ-45, RJ-11, fiber connector types\n•\n4.2. Differentiate between Wi-Fi, cellular, and wired network technologies.\n•\nCopper, including sources of interference; fiber; wireless, including 802.11 (unlicensed, 2.4GHz, 5GHz,\n6GHz), cellular (licensed), sources of interference\n•\n4.3. Describe endpoint devices.\n•\nInternet of Things (IoT) devices, computers, mobile devices, IP Phone, printer, server\n•\n4.4. Demonstrate how to set up and check network connectivity on Windows, Linux, Mac OS, Android,\nand Apple iOS.\n•\nNetworking utilities on Windows, Linux, Android, and Apple operating systems; how to run\ntroubleshooting commands; wireless client settings (SSID, authentication, WPA mode)\n",
+    "image_file": "images/page_54.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 55,
+    "text": "Which wireless security option uses a pre-shared key to\nauthenticate clients?\nA. WPA2-Personal\nB. 802.1x\nC. 802.1q\nD. WPA2-Enterprise\n",
+    "image_file": "images/page_55.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 56,
+    "text": "You need to connect a computer's network adapter to a switch\nusing a 1000BASE-T cable. Which connector should you use?\nA. Coax\nB. RJ-11\nC. OS2 LC\nD. RJ-45\n",
+    "image_file": "images/page_56.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 57,
+    "text": "Which type of connector should you use to terminate unshielded\ntwisted pair (UTP) cable?\nA. ST (Straight Tip)\nB. SC (Subscriber Connector)\nC. RJ-45 (Registered Jack 45)\nD. OS2 LC\n",
+    "image_file": "images/page_57.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 58,
+    "text": "You want to store files that will be accessible by every user on your\nnetwork. Which endpoint device do you need?\nA. Access point\nB. Server\nC. Hub\nD. Switch\n",
+    "image_file": "images/page_58.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 59,
+    "text": "What type of interface is the administrator installing in the\nrouter?\nA. USB (Universal Serial Bus)\nB. SFP (Small Form-factor \nPluggable)\nC. Serial\nD. PoE (Power over Ethernet)\n",
+    "image_file": "images/page_59.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 60,
+    "text": "A Cisco PoE switch is shown in the following image. Which type of\nport will provide both data connectivity and power to an IP\nphone?\nA. Port identified with number 2\nB. Ports identified with number 6\nC. Ports identified with number 7\nD. Ports identified with number 3 and 4.\n",
+    "image_file": "images/page_60.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 61,
+    "text": "Which standard contains the specifications for Wi-Fi networks?\nA. GSM\nB. LTE\nC. IEEE 802.11\nD. IEEE 802.3\nE. EIA/TIA 568A\n",
+    "image_file": "images/page_61.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 62,
+    "text": "Which device is an Internet of Things (IoT) device?\nA. An internet-accessible thermostat\nB. A video streaming server\nC. A virtual private network concentrator\nD. A Cloud-based file storage array\n",
+    "image_file": "images/page_62.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 63,
+    "text": "Which network technology is not impacted by electromagnetic and\nradio wave interference?\nA. Wireless\nB. Twisted Pair\nC. Fiber\nD. Copper\n",
+    "image_file": "images/page_63.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 64,
+    "text": "A cisco switch is not accessible from the network. You need to view\nits running configuration. Which out of band method can you use\nto access it?\nA. SSH\nB. SNMP\nC. Console\nD. Telnet\n",
+    "image_file": "images/page_64.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 65,
+    "text": "Infrastructure\n",
+    "image_file": "images/page_65.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 66,
+    "text": "Cisco Certified Support Technician (CCST) Networking\nInfrastructure\n•\n3.1. Identify the status lights on a Cisco device when given instruction by an engineer.\n•\nLink light color and status (blinking or solid)\n•\n3.2. Use a network diagram provided by an engineer to attach the appropriate cables.\n•\nPatch cables, switches and routers, small topologies, power, rack layout\n•\n3.3. Identify the various ports on network devices.\n•\nConsole port, serial port, fiber port, Ethernet ports, SFPs, USB port, PoE\n•\n3.4. Explain basic routing concepts.\n•\nDefault gateway, layer 2 vs. layer 3 switches, local network vs. remote network\n•\n3.5. Explain basic switching concepts.\n•\nMAC address tables, MAC address filtering, VLAN\n",
+    "image_file": "images/page_66.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 67,
+    "text": "Examine the connections shown in the following image. Move the cable types on the \nright to the appropriate connection description on the left. You may use each cable type \nmore than once or not at all.\n•\nStraight-through UTP \nCable\n•\nFiber Optic\n•\nCrossover UTP Cable\n•\nStraight-through UTP\nStraight-through UTP Cable – Connects Switch to Router R1 Gi0/0/1 interface\nFiber Optic Cable – Connects Router R2 Gi0/0/0 to Router R3 Gi0/0/0 via underground conduit\nCrossover UTP Cable – Connects Router R1 Gi0/0/0 to Router R2 Gi0/0/1\nStraight-through UTP Cable – Connects Switch S3 to Server0 network interface card\n",
+    "image_file": "images/page_67.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 68,
+    "text": "A local company requires two networks in two new buildings. The\naddresses used in these networks must be in the private network\nrange. Which two address ranges should the company use?\n(Choose 2.)\nA. 172.16.0.0 to 172.31.255.255\nB. 192.16.0.0 to 192.16.255.255\nC. 11.0.0.0 to 11.255.255.255\nD. 192.168.0.0 to 192.168.255.255\n",
+    "image_file": "images/page_68.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 69,
+    "text": "Diagnosing \nProblems\n",
+    "image_file": "images/page_69.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 70,
+    "text": "Cisco Certified Support Technician (CCST) Networking\nDiagnosing Problems\n•\n5.1. Demonstrate effective troubleshooting methodologies and help desk best practices, including ticketing, documentation,\nand information gathering.\n•\nPolicies and procedures, accurate and complete documentation, prioritization\n•\n5.2. Perform a packet capture with Wireshark and save it to a file.\n•\nPurpose of using a packet analyzer, saving and opening a .pcap file\n•\n5.3. Run basic diagnostic commands and interpret the results.\n•\nping, ipconfig/ifconfig/ip, tracert/traceroute, nslookup; recognize how firewalls can influence the result\n•\n5.4. Differentiate between different ways to access and collect data about network devices.\n•\nRemote access (RDP, SSH, telnet), VPN, terminal emulators, Console, Network Management Systems, cloud-managed network\n(Meraki), scripts\n•\n5.5. Run basic show commands on a Cisco network device.\n•\nshow run, show cdp neighbors, show ip interface brief, show ip route, show version, show inventory, show switch, show mac\naddress-table, show interface, show interface x, show interface status; privilege levels; command help and auto-complete\n",
+    "image_file": "images/page_70.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 71,
+    "text": "Examine the following Command Output\nWhich two conclusions can you make from the output of the tracert command? (Choose 2.)\nA. The trace successfully reached the www.cisco.com server.\nB. The trace failed after the fourth hop.\nC. The IPv6 address associated with the www.cisco.com server is 2600:1408: c400: 38d: : b33.\nD. The routers at hops 5 and 6 are offline.\nE. The device sending the trace has IPv6 address 2600:1408:c400:38d :: b33.\n",
+    "image_file": "images/page_71.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 72,
+    "text": "Which two pieces of information should you include when\nyou initially create a support ticket? (Choose 2.)\nA. A detailed description of the fault\nB. Details about the computers connected to the network\nC. A description of the conditions when the fault occurs\nD. The actions taken to resolve the fault\nE. The description of the top-down fault-finding procedure\n",
+    "image_file": "images/page_72.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 73,
+    "text": "Which two statements are true about the IPv4 address of\nthe default gateway configured on a host? (Choose 2.)\nA. The IPv4 address of the default gateway must be the first host address in the subnet.\nB. The same default gateway IPv4 address is configured on each host on the local network.\nC. The default gateway is the Loopback0 interface IPv4 address of the router connected to the same local\nnetwork as the host.\nD. The default gateway is the IPv4 address of the router interface connected to the same local network as\nthe host.\nE. Hosts learn the default gateway IPv4 address through router advertisement messages.\n",
+    "image_file": "images/page_73.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 74,
+    "text": "An administrator is configuring the host PC-A on the network shown in the following graphic. PC-A must be\nable to communicate on the local network and on the internet. There is no DHCP server on the network.\nWhat information does the administrator need to input in the IPV4 protocol properties window?\n",
+    "image_file": "images/page_74.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 75,
+    "text": "A help desk technician receives the four trouble tickets listed\nbelow. Which ticket should receive the highest priority and be\naddressed first?\nA. Ticket 1: A user requests relocation of a printer to a different network jack in the same office. The jack \nmust be patched and made active.\nB. Ticket 2: An online webinar is taking place in the conference room. The video conferencing equipment \nlost internet access.\nC. Ticket 3: A user reports that response time for a cloud-based application is slower than usual.\nD. Ticket 4: Two users report that wireless access in the cafeteria has been down for the last hour.\n",
+    "image_file": "images/page_75.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 76,
+    "text": "An engineer configured a new VLAN named VLAN2 for the Data\nCenter team. When the team tries to ping addresses outside\nVLAN2 from a computer in VLAN2, they are unable to reach them.\nWhat should the engineer configure?\nA. Additional VLAN\nB. Default route\nC. Default gateway\nD. Static route\n",
+    "image_file": "images/page_76.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 77,
+    "text": "You are a senior network administrator tasked with diagnosing intermittent connectivity\nissues on the executive floor of a multinational corporation, which primarily uses iOS\ndevices. After initial checks, you suspect that the problem may be related to SSID settings\nand network configuration specifics not aligning correctly with the corporate security\nprotocols. Given the high-security requirements and the exclusive use of iOS devices on\nthis floor, which approach should you take to verify and rectify the network settings\ndirectly on the affected devices?\nA. Network Reset\nB. Manual Configuration\nC. Use Fing\nD. SSID Reconfiguration\n",
+    "image_file": "images/page_77.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 78,
+    "text": "Which two statements are true about the impact to communication on the network while the router is temporarily\noffline. Evaluate the Graphic.\nA.\nNone of the PC’s can access the file server (File-Srv)\nB.\nThe file server (File-Srv) can still access the internet\nC.\nPC-A and PC-B can still communicate with each other.\nD.\nPC-A , PC-B, PC-C and PC-D can still communicate with each other\nE.\nPC-C and PC-D can still communicate with the file server (File-Srv)\n",
+    "image_file": "images/page_78.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 79,
+    "text": "Which action does Switch1 take?\nA. Switch1 queries Switch2 for the MAC address of PC-C\nB. Switch1 drops the frame and sends an error message back to PC-A\nC. Switch1 sends an ARP request to obtain the MAC address of PC-C\nD. Switch1 floods the frame out all active ports except port Gi0/1\n",
+    "image_file": "images/page_79.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 80,
+    "text": "Which port should you identify?\nA. D only\nB. A,B and D only\nC. B and C only\nD. B, C and D only\n",
+    "image_file": "images/page_80.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 81,
+    "text": "A support technician examines the front panel of a Cisco switch\nand sees 4 Ethernet cables connected in the first four ports. Port\n1,2 and 3 have a green LED. Port 4 has a blinking green light. What\nis the state of the Port 4?\nA. Link is up and not stable\nB. Link is up and there is no activity\nC. Link is up with cable malfunctions\nD. Link is up and active\n",
+    "image_file": "images/page_81.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 82,
+    "text": "A user reports a problem connecting to network resources. Other users\nconnected to the same switch are not experiencing the same problem. The\nuser's computer is patched to a switch port Gi0/15. The status indicator for\nthis port is blinking alternately green then amber. What does the light\npattern indicate about the status of port Gi0/15?\nA. The port is administratively shutdown\nB. The port is experiencing a high rate of errors.\nC. The port is blocked by a firewall rule.\nD. The port is not connected to a powered -on device.\n",
+    "image_file": "images/page_82.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 83,
+    "text": "What can you tell from the command output? A user report that a company website is not available. The\nhelp desk technician issues a tracert command to determine if the server hosting the website is reachable\nover the network. The output of the command is shown as follows:\nA. The server with address 192.168.1.10 is reachable over the network\nB. The router at hop 3 is not forwarding packets to the IP address 192.168.1.10\nC. Requests to the web server at 192.168.1.10 are being delayed and time out.\nD. The server address 192.168.1.10 is being blocked by a firewall on the router at hop3.\n",
+    "image_file": "images/page_83.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 84,
+    "text": "Which action can be run directly from the Cisco router’s IOS mode shown?\nA. Enable a routing process\nB. Show running system information\nC. Enter interface IP configuration subcommands\nD. Select an interface to configure\n",
+    "image_file": "images/page_84.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 85,
+    "text": "What can you determine about this switch from the command output? Examine the output of the show\nmac-address-table command on a Cisco 24 ports Ethernet switch\nA. There are eleven active ports on this switch\nB. Port Fa0/5 is set to administratively down.\nC. All entries were learned by examining incoming frames.\nD. Port Gi0/1 connects to another switch\n",
+    "image_file": "images/page_85.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 86,
+    "text": "For each statement about output, select True or False\nYou connect to a Cisco switch and run the following command.\nshow ip interface brief\nThe command displays the following partial output.\nA device connected to GigabitEthernet0/1 can send out broadcast traffic. \nA technician issued the shutdown command on interface GigabitEthernet0/2. \nA technician set the IP address for GigabitEthernet0/0 by using the CLI.\nFalse\nTrue\nTrue\n",
+    "image_file": "images/page_86.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 87,
+    "text": "You purchase a new Cisco switch, turn it on and connect to its console port. You then run \nthe following command.\nThe two interfaces can communicate over Layer 2. \nThe two interfaces are administratively shut down. \nThe two interfaces have default IP address assigned.\n",
+    "image_file": "images/page_87.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 88,
+    "text": "A help desk technician is working on a computer that is unable to resolve URLs in the\nbrowser. The technician runs the ipconfig/all command and receives the following\noutput.\nYou need to issue a command to view the network devices in the path from \nthe computer to the server that resolves the host name. What command \nshould you issue?\n",
+    "image_file": "images/page_88.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 89,
+    "text": "An app on a user’s computer is having problems downloading data.\nThe\napp\nuses\nthe\nfollowing\nURL\nto\ndownload\ndata\nhttps://www.companypro.net:7100/api\nYou need to use Wireshark to capture packets sent to and received\nfrom that URL.\nWhat Wireshark filter options would you use to filter the results?\n",
+    "image_file": "images/page_89.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 90,
+    "text": "Computers in a small office are unable to access companypro.net. You run the ipconfig\ncommand on one of the computers. The results are shown in the exhibit. You need to\ndetermine if you can reach the router. Which command should you use?\n",
+    "image_file": "images/page_90.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 91,
+    "text": "You want to list the IPV4 addresses associated with the\nhost name www.companypro.net.\nWhat is the command to execute in this scenario?\n",
+    "image_file": "images/page_91.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 92,
+    "text": "A support technician examines the front panel of a Cisco switch\nand sees 4 Ethernet cables connected in the first four ports. Ports\n1, 2, and 3 have a green LED. Port 4 has a blinking green light.\nA. Link is up with cable malfunctions.\nB. Link is up and not stable.\nC.Link is up and active.\nD. Link is up and there is no activity.\n",
+    "image_file": "images/page_92.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 93,
+    "text": "What is the purpose of assigning an IP address to the management\nVLAN interface on a Layer 2 switch?\nA. To enable the switch to act as a default gateway for the attached devices\nB. To enable the switch to resolve URLs for the attached the devices\nC. To enable the switch to provide DHCP services to other switches in the network\nD. To enable access to the CLI on the switch through Telnet or SSH\n",
+    "image_file": "images/page_93.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 94,
+    "text": "What command will display the following output?\n",
+    "image_file": "images/page_94.png",
+    "raw_image_count": 1
+  },
+  {
+    "page_num": 95,
+    "text": "A\nnetwork\nadministrator\ncan\nsuccessfully\nping\nthe\nURL\nwww.cisco.com, but cannot ping a corporate server located at a\nremote branch in another city. You need to identify the specific\nrouter where packets are being dropped in the path to the remote\nbranch. Which utility should you use?\nA. Traceroute\nB. Netstat\nC. telnet\nD. ipconfig\n",
+    "image_file": "images/page_95.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 96,
+    "text": "You need to determine whether a remote host is reachable\nthrough the network. Which two commands can you see? Each\ncorrect command is a complete solution.\nA. Netstat\nB. Ping\nC. Route print\nD. Ipconfig\nE. Traceroute or tracert\n",
+    "image_file": "images/page_96.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 97,
+    "text": "In a network with multiple VLANs, a user is unable to communicate\nwith other users in the same VLAN but can communicate with\nusers in different VLANs. Which of the following could be the cause\nof this issue?\nA. user's switchport is not configured as an access port.\nB. user's switchport is not assigned to the correct VLAN.\nC. user's switchport is configured with the wrong duplex setting.\nD. user's switchport is experiencing a spanning tree loop.\n",
+    "image_file": "images/page_97.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 98,
+    "text": "A user initiates a trouble ticket stating that an external web page is\nnot loading. You determine that other resources both internal and\nexternal are still reachable. Which command can you use to help\nlocate where the issue is in the network path to the external web\npage?\nA. ping -t\nB. tracert\nC. ipconfig/all\nD. Nslookup\n",
+    "image_file": "images/page_98.png",
+    "raw_image_count": 0
+  },
+  {
+    "page_num": 99,
+    "text": "Good luck, \nand \nremember:\nFocus on mastering the \nconcepts to ensure success on \nthe certification exam!\n",
+    "image_file": "images/page_99.png",
+    "raw_image_count": 1
+  }
+]
