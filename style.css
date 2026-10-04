@@ -225,7 +225,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  flex: 1;
 }
 
 .sidebar-filters {
@@ -886,6 +885,29 @@ body {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
   }
+  .sidebar-top {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    user-select: none;
+  }
+  .sidebar-content {
+    display: none; /* Hidden by default on tablets/laptops */
+    padding-top: 1rem;
+    animation: loginFadeIn 0.2s ease-out;
+  }
+  .sidebar.expanded .sidebar-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-toggle-icon {
+    display: inline-block !important;
+    transition: transform 0.2s;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .sidebar.expanded .sidebar-toggle-icon {
+    transform: rotate(180deg);
+  }
   .card-container {
     padding: 1rem;
   }
@@ -918,35 +940,22 @@ body {
     font-size: 0.75rem;
   }
   
-  /* Dropdown for sidebar contents on phones */
-  .sidebar-top {
-    cursor: pointer;
-    padding: 0.5rem 0;
-    user-select: none;
-  }
-  .sidebar-content {
-    display: none; /* Hidden by default on phones */
-    padding-top: 1rem;
-    animation: loginFadeIn 0.2s ease-out;
-  }
-  .sidebar.expanded .sidebar-content {
-    display: flex;
-    flex-direction: column;
-  }
-  .sidebar-toggle-icon {
-    display: inline-block;
-    transition: transform 0.2s;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-  }
-  .sidebar.expanded .sidebar-toggle-icon {
-    transform: rotate(180deg);
-  }
 
   /* Horizontal swiping for question grid on phones */
   .sidebar {
     max-height: none; /* Remove height constraint */
   }
+  .sidebar-content {
+    display: flex !important; /* Force content to show on mobile so grid works */
+    flex-direction: column;
+  }
+  .sidebar-filters, .sidebar-actions {
+    display: none; /* Hide these instead of the whole content block */
+  }
+  .sidebar.expanded .sidebar-filters, .sidebar.expanded .sidebar-actions {
+    display: flex;
+  }
+
   .question-grid {
     display: flex;
     overflow-x: auto;
@@ -954,8 +963,10 @@ body {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 0.5rem;
-    max-height: none; /* Override desktop max-height */
+    max-height: 55px; /* Fixed height for horizontal row */
+    flex: none; /* Override desktop flex: 1 */
     gap: 0.5rem;
+    order: -1; /* Move it to the top visually above filters when expanded */
   }
   .grid-item {
     flex: 0 0 45px; /* Fixed width for swipeable items */
